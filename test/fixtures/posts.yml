@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  location: MyString
+  image: MyString
+  mount: MyString
+  zoom: false
+  distance: MyString
+  F: MyString
+  Is: false
+  price: 1
+
+two:
+  title: MyString
+  location: MyString
+  image: MyString
+  mount: MyString
+  zoom: false
+  distance: MyString
+  F: MyString
+  Is: false
+  price: 1

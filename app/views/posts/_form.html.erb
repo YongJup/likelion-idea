@@ -1,0 +1,64 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= select_tag("post[location]", options_for_select([['제주시', '제주시'], ['애월읍', '애월읍'],
+    ['조천읍', '조천읍'], ['한림읍', '한림읍'], ['구좌읍', '구좌읍'], ['한경면', '한경면'], ['서귀포시', '서귀포시'], ['대정읍', '대정읍'], ['안덕면', '안덕면'],
+    ['남원읍', '남원읍'], ['표선면', '표선면'], ['성산읍', '성산읍']])) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mount %>
+    <%= select_tag("post[mount]", options_for_select([['EF 마운트', 1], ['EF-s 마운트', 2]], 1)) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zoom %>
+    <%= select_tag("post[zoom]", options_for_select([['단렌즈', 1], ['줌렌즈', 2]], 1)) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distance %>
+    <%= form.text_field :distance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :F %>
+    <%= form.text_field :F %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Is %>
+    <%= form.check_box :Is %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
