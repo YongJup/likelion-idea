@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+a{
+    padding-right: 50px;
+}
+
+.form-group label{
+    display: inline-block;
+    float: left;
+}
+.form-group select{
+    display: inline-block;
+    float: left;
+}

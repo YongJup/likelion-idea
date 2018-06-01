@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like] 
+  before_action :authenticate_user!
   # GET /posts
   # GET /posts.json
   def index
@@ -25,9 +25,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-  
     @post = Post.new(post_params)
-
+    @post.user_id = current_user.id
+    # @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -63,6 +63,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def mypage
+    @posts = current_user.posts
+  end
+  
+  def like
+    @post.toggle_like(current_user)
+    redirect_back(fallback_location: root_path)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -71,8 +80,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :location, :image, :mount, :zoom, :distance, :F, :Is, :price)
+      params.require(:post).permit(:title, :location, :image, :mount, :zoom, :distance, :F, :Is, :content, :price)
     end
-    
-  
 end

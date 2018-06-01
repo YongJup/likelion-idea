@@ -9,7 +9,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :distance
       t.string :F
       t.string :Is
+      t.text :content
       t.integer :price
+      t.integer :user_id
 
       t.timestamps
     end

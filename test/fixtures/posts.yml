@@ -5,10 +5,11 @@ one:
   location: MyString
   image: MyString
   mount: MyString
-  zoom: false
+  zoom: MyString
   distance: MyString
   F: MyString
-  Is: false
+  Is: MyString
+  content: MyText
   price: 1
 
 two:
@@ -16,8 +17,9 @@ two:
   location: MyString
   image: MyString
   mount: MyString
-  zoom: false
+  zoom: MyString
   distance: MyString
   F: MyString
-  Is: false
+  Is: MyString
+  content: MyText
   price: 1

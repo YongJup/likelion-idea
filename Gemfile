@@ -9,6 +9,12 @@ gem 'carrierwave'
 
 gem 'rails_db'
 
+gem 'jquery-rails'
+gem 'bootstrap'
+
+#권한
+gem 'cancancan'
+gem 'rolify'
 #검색
 gem 'ransack'
 

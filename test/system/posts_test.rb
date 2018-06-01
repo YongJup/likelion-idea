@@ -16,6 +16,7 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "F", with: @post.F
     fill_in "Is", with: @post.Is
+    fill_in "Content", with: @post.content
     fill_in "Distance", with: @post.distance
     fill_in "Image", with: @post.image
     fill_in "Location", with: @post.location
@@ -35,6 +36,7 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "F", with: @post.F
     fill_in "Is", with: @post.Is
+    fill_in "Content", with: @post.content
     fill_in "Distance", with: @post.distance
     fill_in "Image", with: @post.image
     fill_in "Location", with: @post.location

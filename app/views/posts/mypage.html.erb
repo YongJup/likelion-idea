@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Location</th>
+      <th>Image</th>
+      <th>Mount</th>
+      <th>Zoom</th>
+      <th>Distance</th>
+      <th>F</th>
+      <th>Is</th>
+      <th>content</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= link_to post.user.nick_name, post.user %></td>
+        <td><%= post.location %></td>
+        <td><img src="<%= post.image.url %>" alt="" width="200px"></img></td>
+        <td><%= post.mount %></td>
+        <td><%= post.zoom %></td>
+        <td><%= post.distance %></td>
+        <td><%= post.F %></td>
+        <td><%= post.Is %></td>
+        <td><%= post.content %></td>
+        <td><%= post.price %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Edit User', edit_user_registration_path %>

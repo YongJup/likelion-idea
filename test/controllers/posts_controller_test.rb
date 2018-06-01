@@ -17,7 +17,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post" do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { F: @post.F, Is: @post.Is, distance: @post.distance, image: @post.image, location: @post.location, mount: @post.mount, price: @post.price, title: @post.title, zoom: @post.zoom } }
+      post posts_url, params: { post: { F: @post.F, Is: @post.Is, content: @post.content, distance: @post.distance, image: @post.image, location: @post.location, mount: @post.mount, price: @post.price, title: @post.title, zoom: @post.zoom } }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -34,7 +34,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { F: @post.F, Is: @post.Is, distance: @post.distance, image: @post.image, location: @post.location, mount: @post.mount, price: @post.price, title: @post.title, zoom: @post.zoom } }
+    patch post_url(@post), params: { post: { F: @post.F, Is: @post.Is, content: @post.content, distance: @post.distance, image: @post.image, location: @post.location, mount: @post.mount, price: @post.price, title: @post.title, zoom: @post.zoom } }
     assert_redirected_to post_url(@post)
   end
 
